@@ -233,7 +233,7 @@ def instroock():                                        #Наши иструкт
     for row in people:
         table.insert('', 0, values=row)
 
-    scroll_pane =ttk.Scrollbar(window15, command=table.yview)
+    scroll_pane =ttk.Scrollbar(window15, command=table.yview)                                                      #ЗДЕСЬ СКРОЛЬБАР РАБОТАЕТ 
     table.configure(yscrollcommand=scroll_pane.set)
     scroll_pane.pack(side=tk.RIGHT, fill=tk.Y)
     table.pack(expand=tk.YES, fill=tk.BOTH)
@@ -283,7 +283,7 @@ def group_lessons():
     window7.geometry('1210x600')
     window7.config(bg='#363636')
 
-    table = ttk.Treeview(window7)
+    table = ttk.Treeview(window7)                                                                                           # А ЗДЕСЬ УЖЕ НЕТ 
     scroll_pane = ttk.Scrollbar(window7, command=table.yview)
     table.configure(yscrollcommand=scroll_pane.set)
     scroll_pane.pack(side=tk.RIGHT, fill=tk.Y)
