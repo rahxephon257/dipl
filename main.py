@@ -1,16 +1,21 @@
-# This is a sample Python script.
+from tkinter import *
+from tkinter import ttk
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+root = Tk()
+root.title("METANIT.COM")
+root.geometry("250x200")
+root.grid_columnconfigure(0, weight=1)
+root.grid_rowconfigure(0, weight=1)
 
+editor = Text(wrap="none")
+editor.grid(column=0, row=0, sticky=NSEW)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+ys = ttk.Scrollbar(orient="vertical", command=editor.yview)
+ys.grid(column=1, row=0, sticky=NS)
+xs = ttk.Scrollbar(orient="horizontal", command=editor.xview)
+xs.grid(column=0, row=1, sticky=EW)
 
+editor["yscrollcommand"] = ys.set
+editor["xscrollcommand"] = xs.set
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+root.mainloop()
